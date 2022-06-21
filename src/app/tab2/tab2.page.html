@@ -1,0 +1,23 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>
+      HISTORIAL DE SCANN
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-list>
+    <ion-item *ngFor="let registro of dataLocal.historial" (click)="abrirRegistro(registro)" detail>
+      <ion-icon slot="start" [name]="registro.icon"></ion-icon>
+      <ion-label>
+        <h2>{{registro.text}}</h2>
+        <p>{{registro.create | date: "medium"}}</p>
+      </ion-label>
+    </ion-item>
+  </ion-list>
+  <div id="mapa-mapbox">
+
+  </div>
+ 
+</ion-content>
